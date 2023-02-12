@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.advice__container {
+  width: 40rem;
+  min-height: 25rem;
+  max-height: 100%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  background: hsla(216, 19%, 38%, 0.443);
+  color: #fff;
+  padding: 2rem;
+  position: relative;
+}
+
+.advice--index {
+  color: hsl(150, 100%, 66%);
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+.advice--text {
+  font-size: 2rem;
+  color: #fff;
+  text-align: center;
+}
+
+.advice__border {
+  overflow: hidden;
+}
+
+.advice__border img {
+  width: 100%;
+}
+
+.dice {
+  padding: 1.25rem 1rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  background: hsl(150, 100%, 66%);
+  cursor: pointer;
+}
+
+.dice:hover {
+  box-shadow: 0px 0px 10px 1px hsl(150, 100%, 66%);
+}
+
+.dice img {
+  width: 70%;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  background: linear-gradient(
+    0deg,
+    #ffffff79 33%,
+    hsla(216, 19%, 38%, 0.443) 100%
+  );
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: hsla(216, 19%, 38%, 0.443);
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    /* 8px per rem */
+    font-size: 50%;
+  }
+  .loader {
+    width: 30px;
+    height: 30px;
+  }
+
+  .loader::after {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+@media (max-width: 350px) {
+  html {
+    /* 6px per rem */
+    font-size: 37.5%;
+  }
+}
